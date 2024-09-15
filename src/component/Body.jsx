@@ -4,7 +4,7 @@ function Body() {
   return (
     <div className="bg-white">
       {/* Top Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between px-6 py-12 space-y-8 md:space-y-0">
+      <div className="flex flex-col md:flex-row items-center justify-around px-6 py-12 space-y-8 md:space-y-0">
         {/* Left Content Section */}
         <div className="md:w-1/2 space-y-4">
           <h1 className="text-5xl font-bold text-gray-900 leading-snug">
@@ -78,7 +78,7 @@ function Body() {
       <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center mt-12">
         Why choose Gelato
       </h1>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-8 px-6">
+      <div className="flex flex-col md:flex-row justify-around items-center gap-16 px-6 pb-8">
         {/* Left Image */}
         <div className="md:w-1/2">
           <img
@@ -137,7 +137,7 @@ function Body() {
 
       {/* Additional sections */}
       {/* For print on demand sellers */}
-      <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12 bg-[#fff4ec]">
+      <div className="flex flex-col md:flex-row justify-around items-center px-6 py-12 bg-[#fff4ec]">
         <div className="md:w-1/2 space-y-6">
           <p className="text-lg">For print on demand sellers</p>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
@@ -177,7 +177,7 @@ function Body() {
       </div>
 
       {/* Printing United Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12 bg-[#fff4ec]">
+      <div className="flex flex-col md:flex-row justify-around items-center px-6 py-12 bg-[#fff4ec]">
         <div className="md:w-1/2 space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
             Meet GelatoConnect at Printing United
