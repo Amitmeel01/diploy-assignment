@@ -17,7 +17,7 @@ function Header() {
   };
 
   return (
-    <div className='pb-32'>
+    <div className='lg:pb-32'>
       {/* Sidebar */}
       <div
         className={`fixed inset-0 z-50 bg-gray-800 bg-opacity-75 transition-transform transform ${
@@ -97,7 +97,7 @@ function Header() {
 
       {/* Main header section */}
       <div className="fixed top-8 inset-x-0 z-30 bg-white shadow-md py-2">
-        <div className="flex justify-between items-center px-8">
+        <div className="flex justify-between items-center px-8 py-4">
           {/* Sidebar Toggle Button */}
           <button className="text-xl md:hidden" onClick={toggleSidebar}>
             <FaBars />
@@ -131,7 +131,7 @@ function Header() {
             </a>
           </div>
         </div>
-        <hr />
+        {/* <hr /> */}
 
         {/* Navigation links section */}
         <div className="hidden md:flex justify-start ml-[150px] font-bold items-center gap-8 py-4 relative text-lg whitespace-nowrap">
