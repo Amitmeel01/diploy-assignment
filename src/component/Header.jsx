@@ -20,19 +20,76 @@ function Header() {
     <div className="relative">
       {/* Sidebar */}
       <div
-        className={`fixed inset-0 bg-gray-800 bg-opacity-75 transition-transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:hidden`}
-      >
-        <div className="flex flex-col p-4 space-y-4">
-          <button className="text-white text-xl" onClick={toggleSidebar}>
-            <RxCross2 />
-          </button>
-          <a href="#" className="text-white hover:underline">Products</a>
-          <a href="#" className="text-white hover:underline">Start Selling</a>
-          <a href="#" className="text-white hover:underline">Pricing</a>
-          <a href="#" className="text-white hover:underline">Resources</a>
-          <a href="#" className="text-white hover:underline">Help</a>
-        </div>
-      </div>
+  className={`fixed inset-0 z-50 bg-gray-800 bg-opacity-75 transition-transform transform ${
+    isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+  } md:hidden`}
+>
+  <div className="bg-white h-full w-64 p-6 shadow-lg relative">
+    {/* Sidebar Close Button */}
+   
+
+    {/* Sidebar Top Section with Globe and Cart */}
+    <div className="flex justify-around items-center gap-4 mt-8">
+    <button
+      className=" text-gray-600"
+      onClick={toggleSidebar}
+    >
+      <RxCross2 className="text-2xl font-bold" />
+    </button>
+      <a href="#" className="flex items-center gap-2 hover:underline font-bold">
+        <FaGlobe className="text-lg" />
+        <p>IN/INR</p>
+      </a>
+      <hr className='flex-col '/>
+      <a href="#" className="flex items-center gap-2 hover:underline font-bold">
+        <FaShoppingCart className="text-lg" />
+        <p>Cart</p>
+      </a>
+    </div>
+
+    <hr className="my-6" />
+
+    {/* Sign In and Sign Up Section */}
+    <div className="flex gap-4 mb-8 justify-around">
+      <a href="#" className="flex items-center gap-2 hover:underline">
+        <FaUser className="text-[12px]" />
+        <p>Sign in</p>
+      </a>
+      <a href="#" className="bg-black text-white py-1 px-4 hover:bg-gray-700 text-center text-[12px] rounded-full font-bold">
+        Sign up for free
+      </a>
+    </div>
+
+    <hr className="my-6" />
+
+    {/* Sidebar Links */}
+   
+    <ul className="space-y-6">
+      <li className="text-lg font-medium text-gray-700">
+        <a href="#" className="hover:underline">Products</a>
+      </li>
+      <li className="text-lg font-medium text-gray-700">
+        <a href="#" className="hover:underline">Start Selling</a>
+      </li>
+      <li className="text-lg font-medium text-gray-700">
+        <a href="#" className="hover:underline">Tools and Apps</a>
+      </li>
+      <li className="text-lg font-medium text-gray-700">
+        <a href="#" className="hover:underline">Pricing</a>
+      </li>
+      <li className="text-lg font-medium text-gray-700">
+        <a href="#" className="hover:underline">Resources</a>
+      </li>
+      <li className="text-lg font-medium text-gray-700">
+        <a href="#" className="hover:underline">Pro Sellers</a>
+      </li>
+      <li className="text-lg font-medium text-gray-700">
+        <a href="#" className="hover:underline">GelatoConnect</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
       {/* Top bar with the free shipping banner */}
       <div className="bg-black text-white text-sm flex justify-center py-1">
