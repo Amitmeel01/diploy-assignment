@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
+import { FaShoppingCart, FaUser, FaBars } from 'react-icons/fa';
+import { AiOutlineDown, AiOutlineUp, AiOutlineRight } from 'react-icons/ai';
+import { RxCross2 } from 'react-icons/rx';
+import { FaGlobe } from "react-icons/fa";
 import { RiCustomerServiceFill } from "react-icons/ri";
-import { BsGlobe2 } from "react-icons/bs";
-import { FaShoppingCart, FaUser, FaBars } from "react-icons/fa";
-import { AiOutlineDown, AiOutlineUp, AiOutlineRight } from 'react-icons/ai'; 
-import { RxCross2 } from "react-icons/rx";
-
 function Header() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,13 +17,15 @@ function Header() {
   };
 
   return (
-    <div>
+    <div className="relative">
       {/* Sidebar */}
-      <div 
-        className={`fixed inset-0 bg--800 bg-opacity-75 transition-transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:hidden`}
+      <div
+        className={`fixed inset-0 bg-gray-800 bg-opacity-75 transition-transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:hidden`}
       >
         <div className="flex flex-col p-4 space-y-4">
-          <button className="text-white text-xl" onClick={toggleSidebar}><RxCross2 /></button>
+          <button className="text-white text-xl" onClick={toggleSidebar}>
+            <RxCross2 />
+          </button>
           <a href="#" className="text-white hover:underline">Products</a>
           <a href="#" className="text-white hover:underline">Start Selling</a>
           <a href="#" className="text-white hover:underline">Pricing</a>
@@ -55,11 +56,11 @@ function Header() {
         {/* Right section icons */}
         <div className='hidden md:flex items-center gap-10 font-bold'>
           <a href="#" className='flex items-center gap-2 hover:underline'>
-            <RiCustomerServiceFill className='text-lg' />
+            <RiCustomerServiceFill  className='text-lg' />
             <p>Contact us</p>
           </a>
           <a href="#" className='flex items-center gap-2 hover:underline font-bold'>
-            <BsGlobe2 className='text-lg' />
+            <FaGlobe  className='text-lg' />
             <p>IN/INR</p>
           </a>
           <a href="#" className='flex items-center gap-2 hover:underline font-bold'>
@@ -80,13 +81,13 @@ function Header() {
       {/* Navigation links section */}
       <div className="hidden md:flex justify-start ml-[150px] font-bold items-center gap-8 text-sm py-4 relative text-lg whitespace-nowrap">
         {/* Dropdown Navigation Menu */}
-        <div 
+        <div
           className="relative"
           onMouseEnter={() => handleDropdown(1)}
           onMouseLeave={() => setOpenDropdown(null)}
         >
           <a href="#" className="hover:underline flex items-center gap-[4px]">
-            Products {openDropdown === 1 ? <AiOutlineUp /> : <AiOutlineDown />}  
+            Products {openDropdown === 1 ? <AiOutlineUp /> : <AiOutlineDown />}
           </a>
           {openDropdown === 1 && (
             <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg p-6 w-[200px]">
@@ -133,13 +134,13 @@ function Header() {
         </div>
 
         {/* Start Selling Dropdown */}
-        <div 
+        <div
           className="relative"
           onMouseEnter={() => handleDropdown(2)}
           onMouseLeave={() => setOpenDropdown(null)}
         >
           <a href="#" className="hover:underline flex items-center gap-[4px]">
-            Start selling {openDropdown === 2 ? <AiOutlineUp /> : <AiOutlineDown />} 
+            Start selling {openDropdown === 2 ? <AiOutlineUp /> : <AiOutlineDown />}
           </a>
           {openDropdown === 2 && (
             <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg p-6 w-[200px]">
@@ -177,6 +178,8 @@ function Header() {
             </div>
           )}
         </div>
+
+       
 
         {/* Pricing Dropdown */}
         <div 
