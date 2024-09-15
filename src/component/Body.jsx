@@ -1,204 +1,201 @@
-import React, { useState } from 'react';
-import { RiCustomerServiceFill } from "react-icons/ri";
-import { BsGlobe2 } from "react-icons/bs";
-import { FaShoppingCart, FaUser } from "react-icons/fa";
-import { AiOutlineDown, AiOutlineUp, AiOutlineRight } from 'react-icons/ai'; 
+import React from "react";
 
-function Header() {
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  const handleDropdown = (index) => {
-    setOpenDropdown(index === openDropdown ? null : index);
-  };
-
+function Body() {
   return (
-    <div className="border-b">
-      {/* Top bar with the free shipping banner */}
-      <div className="bg-black text-white text-sm flex justify-center py-1">
-        <a href="#" className="hover:underline">
-          FREE SHIPPING for orders over $300. Order today
-        </a>
+    <div className="bg-white">
+      {/* Top Section */}
+      <div className="flex flex-col md:flex-row items-center justify-between px-6 py-12 space-y-8 md:space-y-0">
+        {/* Left Content Section */}
+        <div className="md:w-1/2 space-y-4">
+          <h1 className="text-5xl font-bold text-gray-900 leading-snug">
+            Print on demand for your ecommerce business
+          </h1>
+          <h2 className="text-lg font-medium text-gray-700">
+            Sign up for free and only pay for what you sell
+          </h2>
+          <p className="text-base text-gray-600">
+            Turn your passion into profit with the world's largest print on
+            demand network.
+          </p>
+
+          {/* Buttons and Shopify section */}
+          <div className="mt-6">
+            <div className="flex space-x-4">
+              <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800">
+                Get started for free
+              </button>
+              <button className="border border-black px-6 py-3 rounded-md hover:bg-gray-100">
+                See our products
+              </button>
+            </div>
+
+            {/* Shopify and Rating */}
+            <div className="flex items-center mt-6 space-x-2 ml-4">
+              <img src="/image/shopify.svg" alt="Shopify" className="w-28" />
+              <div className="flex items-center space-x-1">
+                {[...Array(5)].map((_, index) => (
+                  <img
+                    key={index}
+                    src="/image/star.svg"
+                    alt="Rating stars"
+                    className="w-5"
+                  />
+                ))}
+                <span className="text-lg font-semibold">4.8/5</span>
+              </div>
+            </div>
+            <p className="text-gray-500 m-4">based on 887 reviews</p>
+          </div>
+        </div>
+
+        {/* Right Image Section */}
+        <div className="w-full md:w-[45%] flex justify-center">
+          <img
+            src="/image/1st.jpg"
+            alt="Product visuals"
+            className="rounded-md shadow-md w-full h-auto object-cover"
+          />
+        </div>
       </div>
 
-      {/* Main header section */}
-      <div className="flex justify-around items-center px-8 py-4">
-        {/* Logo */}
+      {/* Bottom Stats Section */}
+      <div className="bg-yellow-100 px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
         <div>
-          <img src='/image/logo.svg' alt='logo' className='w-[130px]' />
+          <h1 className="text-5xl font-bold">90%</h1>
+          <p className="text-xl">of all orders are produced locally</p>
         </div>
-
-        {/* Right section icons */}
-        <div className='flex items-center gap-10 font-bold'>
-          <a href="#" className='flex items-center gap-2 hover:underline'>
-            <RiCustomerServiceFill className='text-lg' />
-            <p>Contact us</p>
-          </a>
-          <a href="#" className='flex items-center gap-2 hover:underline font-bold'>
-            <BsGlobe2 className='text-lg' />
-            <p>IN/INR</p>
-          </a>
-          <a href="#" className='flex items-center gap-2 hover:underline font-bold'>
-            <FaShoppingCart className='text-lg' />
-            <p>Cart</p>
-          </a>
-          <a href="#" className='flex items-center gap-2 hover:underline'>
-            <FaUser className='text-lg' />
-            <p>Sign in</p>
-          </a>
-          <a href="#" className="bg-black text-white py-1 px-4 rounded hover:bg-gray-700">
-            Sign up for free
-          </a>
+        <div>
+          <h1 className="text-5xl font-bold">90%</h1>
+          <p className="text-xl">of orders arrive within 5 days</p>
+        </div>
+        <div>
+          <h1 className="text-5xl font-bold">140+</h1>
+          <p className="text-xl">print providers across 32 countries</p>
         </div>
       </div>
-      <hr />
 
-      {/* Navigation links section */}
-      <div className="flex justify-start ml-[150px] font-bold items-center gap-8 text-sm py-4 relative text-lg whitespace-nowrap">
-        {/* Dropdown Navigation Menu */}
-        <div 
-          className="relative"
-          onMouseEnter={() => handleDropdown(1)}
-          onMouseLeave={() => setOpenDropdown(null)}
-        >
-          <a href="#" className="hover:underline flex items-center gap-[4px]">
-            Products {openDropdown === 1 ? <AiOutlineUp /> : <AiOutlineDown />}  
-          </a>
-          {openDropdown === 1 && (
-            <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg p-6 w-[200px]">
-              <ul className="flex flex-col gap-4">
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Bestsellers
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Mens clothing
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Womens clothing
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Kids & baby clothing
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Wall art
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Calendars
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Cards
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Photo books
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Hats
-                  <AiOutlineRight />
-                </li>
-              </ul>
-            </div>
-          )}
+      {/* Why choose Gelato Section */}
+      <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center mt-12">
+        Why choose Gelato
+      </h1>
+      <div className="flex flex-col md:flex-row justify-center items-center gap-8 px-6">
+        {/* Left Image */}
+        <div className="md:w-1/2">
+          <img
+            src="/image/2nd.jpg"
+            alt="Why choose Gelato"
+            className="rounded-md shadow-md w-full h-auto"
+          />
         </div>
 
-        {/* Start Selling Dropdown */}
-        <div 
-          className="relative"
-          onMouseEnter={() => handleDropdown(2)}
-          onMouseLeave={() => setOpenDropdown(null)}
-        >
-          <a href="#" className="hover:underline flex items-center gap-[4px]">
-            Start selling {openDropdown === 2 ? <AiOutlineUp /> : <AiOutlineDown />} 
-          </a>
-          {openDropdown === 2 && (
-            <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg p-6 w-[200px]">
-              <ul className="flex flex-col gap-4">
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Print on demand
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Setup your business
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Sell custom products
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Integrations
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Shipping and delivery
-                  <AiOutlineRight />
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Partner service
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Custom packaging
-                </li>
-                <li className="flex items-center justify-between hover:bg-gray-100 p-4 rounded cursor-pointer">
-                  Move your products
-                </li>
-              </ul>
+        {/* Right Content */}
+        <div className="md:w-1/2 space-y-6">
+          {[
+            {
+              title: "World's largest print-on-demand network",
+              description:
+                "140+ print partners in 32 countries. Gelato is a truly global service.",
+            },
+            {
+              title: "Sell globally, produce locally",
+              description:
+                "Your products are produced close to your customers, wherever they are.",
+            },
+            {
+              title: "100% free editing tools",
+              description:
+                "Create your custom products using our suite of free tools.",
+            },
+            {
+              title: "60+ logistics partners",
+              description:
+                "Our global network ensures fast delivery of your products.",
+            },
+            {
+              title: "High-quality products",
+              description:
+                "We partner with leading brands to ensure the best quality products.",
+            },
+            {
+              title: "Endless creativity with Shutterstock Images",
+              description:
+                "Access millions of images and graphics to create unique products.",
+            },
+            {
+              title: "1-click integration with leading platforms",
+              description:
+                "Connect your store to Gelato with integrations like Shopify, Etsy, etc.",
+            },
+          ].map((item, index) => (
+            <div key={index}>
+              <h2 className="text-xl font-semibold">{`▻ ${item.title}`}</h2>
+              <p className="text-gray-600">{item.description}</p>
             </div>
-          )}
+          ))}
         </div>
+      </div>
 
-        {/* Pricing Dropdown */}
-        <div 
-          className="relative"
-          onMouseEnter={() => handleDropdown(3)}
-          onMouseLeave={() => setOpenDropdown(null)}
-        >
-          <a href="#" className="hover:underline flex items-center gap-[4px]">
-            Pricing {openDropdown === 3 ? <AiOutlineUp /> : <AiOutlineDown />} 
-          </a>
-          {openDropdown === 3 && (
-            <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg p-6 w-[200px]">
-              <ul className="flex flex-col gap-4">
-                <li className="hover:bg-gray-100 p-4 rounded cursor-pointer">Pricing details</li>
-                <li className="hover:bg-gray-100 p-4 rounded cursor-pointer">Bulk pricing</li>
-                <li className="hover:bg-gray-100 p-4 rounded cursor-pointer">Custom pricing</li>
-              </ul>
-            </div>
-          )}
+      {/* Additional sections */}
+      {/* For print on demand sellers */}
+      <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12">
+        <div className="md:w-1/2 space-y-6">
+          <p className="text-lg">For print on demand sellers</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Accelerate business growth with innovative design tools
+          </h1>
+          <p className="text-lg text-gray-600">
+            See how our solutions help you reach new customers and maximize
+            profits.
+          </p>
+          <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800">
+            Get started
+          </button>
         </div>
-
-        {/* Resources Dropdown */}
-        <div 
-          className="relative"
-          onMouseEnter={() => handleDropdown(4)}
-          onMouseLeave={() => setOpenDropdown(null)}
-        >
-          <a href="#" className="hover:underline flex items-center gap-[4px]">
-            Resources {openDropdown === 4 ? <AiOutlineUp /> : <AiOutlineDown />} 
-          </a>
-          {openDropdown === 4 && (
-            <div className="absolute top-full mt-2 bg-white shadow-lg rounded-lg p-6 w-[200px]">
-              <ul className="flex flex-col gap-4">
-                <li className="hover:bg-gray-100 p-4 rounded cursor-pointer">Guides</li>
-                <li className="hover:bg-gray-100 p-4 rounded cursor-pointer">Webinars</li>
-                <li className="hover:bg-gray-100 p-4 rounded cursor-pointer">Blog</li>
-              </ul>
-            </div>
-          )}
+        <div className="md:w-1/2 flex justify-center">
+          <img src="/image/4th.gif" alt="For print on demand sellers" />
         </div>
+      </div>
 
-        <a href="#" className="hover:underline">
-          Help
-        </a>
+      {/* For print producers */}
+      <div className="flex flex-col md:flex-row-reverse justify-around items-center px-6 py-12 gap-8">
+        <div className="md:w-1/2 space-y-6">
+          <p className="text-lg">For print producers</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+            GelatoConnect
+          </h1>
+          <p className="text-lg text-gray-600">
+            Elevate efficiency, cut costs, and automate with our all-in-one
+            solution.
+          </p>
+          <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800">
+            Learn more
+          </button>
+        </div>
+        <div className="md:w-1/2 flex justify-center">
+          <img src="/image/5th.gif" alt="GelatoConnect" />
+        </div>
+      </div>
+
+      {/* Printing United Section */}
+      <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12">
+        <div className="md:w-1/2 space-y-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Meet GelatoConnect at Printing United
+          </h1>
+          <p className="text-lg text-gray-600">
+            Meet us from September 10-12 in Las Vegas. Book your meeting to
+            discover how we're transforming businesses.
+          </p>
+          <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800">
+            Book a meeting
+          </button>
+        </div>
+        <div className="md:w-1/2 flex justify-center">
+          <img src="/image/6th.jpg" alt="Printing United" />
+        </div>
       </div>
     </div>
   );
 }
 
-export default Header;
+export default Body;

@@ -56,9 +56,9 @@ function Header() {
       <div className="flex justify-start ml-[150px] font-bold items-center gap-8 text-sm py-4 relative text-lg whitespace-nowrap">
         {/* Dropdown Navigation Menu */}
         <div 
-          className="relative" 
-          onMouseEnter={() => handleDropdown(1)} 
-          onMouseLeave={() => handleDropdown(null)}
+          className="relative"
+          onMouseEnter={() => handleDropdown(1)}
+          onMouseLeave={() => setOpenDropdown(null)}
         >
           <a href="#" className="hover:underline flex items-center gap-[4px]">
             Products {openDropdown === 1 ? <AiOutlineUp /> : <AiOutlineDown />}  
@@ -109,9 +109,9 @@ function Header() {
 
         {/* Start Selling Dropdown */}
         <div 
-          className="relative" 
-          onMouseEnter={() => handleDropdown(2)} 
-          onMouseLeave={() => handleDropdown(null)}
+          className="relative"
+          onMouseEnter={() => handleDropdown(2)}
+          onMouseLeave={() => setOpenDropdown(null)}
         >
           <a href="#" className="hover:underline flex items-center gap-[4px]">
             Start selling {openDropdown === 2 ? <AiOutlineUp /> : <AiOutlineDown />} 
@@ -155,9 +155,9 @@ function Header() {
 
         {/* Pricing Dropdown */}
         <div 
-          className="relative" 
-          onMouseEnter={() => handleDropdown(3)} 
-          onMouseLeave={() => handleDropdown(null)}
+          className="relative"
+          onMouseEnter={() => handleDropdown(3)}
+          onMouseLeave={() => setOpenDropdown(null)}
         >
           <a href="#" className="hover:underline flex items-center gap-[4px]">
             Pricing {openDropdown === 3 ? <AiOutlineUp /> : <AiOutlineDown />} 
@@ -175,9 +175,9 @@ function Header() {
 
         {/* Resources Dropdown */}
         <div 
-          className="relative" 
-          onMouseEnter={() => handleDropdown(4)} 
-          onMouseLeave={() => handleDropdown(null)}
+          className="relative"
+          onMouseEnter={() => handleDropdown(4)}
+          onMouseLeave={() => setOpenDropdown(null)}
         >
           <a href="#" className="hover:underline flex items-center gap-[4px]">
             Resources {openDropdown === 4 ? <AiOutlineUp /> : <AiOutlineDown />} 
