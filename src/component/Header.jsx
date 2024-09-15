@@ -96,8 +96,9 @@ function Header() {
       </div>
 
       {/* Main header section */}
-      <div className="fixed top-8 inset-x-0 z-30 bg-white shadow-md py-2">
-        <div className="flex justify-between items-center px-8 py-4">
+    
+      <div className="fixed top-8 inset-x-0 z-30 bg-white shadow-md py-0">
+        <div className=" py-0 flex justify-between items-center px-8 max-sm:py-4 sm:py-4">
           {/* Sidebar Toggle Button */}
           <button className="text-xl md:hidden" onClick={toggleSidebar}>
             <FaBars />
@@ -131,10 +132,10 @@ function Header() {
             </a>
           </div>
         </div>
-        {/* <hr /> */}
+        <hr  className='max-sm:hidden'/>
 
         {/* Navigation links section */}
-        <div className="hidden md:flex justify-start ml-[150px] font-bold items-center gap-8 py-4 relative text-lg whitespace-nowrap">
+        <div className="hidden md:flex justify-start ml-[150px] font-bold items-center gap-8 py-4 relative text-[14px] whitespace-nowrap">
           {/* Dropdown Navigation Menu */}
           <div
             className="relative"
@@ -337,6 +338,7 @@ function Header() {
               </div>
             )}
           </div>
+          {/* <hr /> */}
         </div>
       </div>
     </div>
