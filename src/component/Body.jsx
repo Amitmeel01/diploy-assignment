@@ -59,7 +59,7 @@ function Body() {
       </div>
 
       {/* Bottom Stats Section */}
-      <div className="bg-yellow-100 px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div className="bg-[#fff4ec] px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
         <div>
           <h1 className="text-5xl font-bold">90%</h1>
           <p className="text-xl">of all orders are produced locally</p>
@@ -137,7 +137,7 @@ function Body() {
 
       {/* Additional sections */}
       {/* For print on demand sellers */}
-      <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12">
+      <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12 bg-[#fff4ec]">
         <div className="md:w-1/2 space-y-6">
           <p className="text-lg">For print on demand sellers</p>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
@@ -177,7 +177,7 @@ function Body() {
       </div>
 
       {/* Printing United Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12">
+      <div className="flex flex-col md:flex-row justify-between items-center px-6 py-12 bg-[#fff4ec]">
         <div className="md:w-1/2 space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
             Meet GelatoConnect at Printing United

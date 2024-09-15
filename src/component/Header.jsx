@@ -136,7 +136,7 @@ function Header() {
       <hr />
 
       {/* Navigation links section */}
-      <div className="hidden md:flex justify-start ml-[150px] font-bold items-center gap-8 text-sm py-4 relative text-lg whitespace-nowrap">
+      <div className="hidden md:flex justify-start ml-[150px] font-bold items-center gap-8  py-4 relative text-lg whitespace-nowrap">
         {/* Dropdown Navigation Menu */}
         <div
           className="relative"
